@@ -1,4 +1,4 @@
-import { AccountUpdate, Mina, PrivateKey } from "o1js";
+import { AccountUpdate, Bool, Mina, PrivateKey, UInt8 } from "o1js";
 import { FungibleToken } from "./FungibleToken.js";
 import { FungibleTokenAdmin } from "./FungibleTokenAdmin.js";
 
@@ -36,6 +36,7 @@ const deployTx = await Mina.transaction({
     symbol: "CREATE",
     src: "https://github.com/MinaFoundation/mina-fungible-token/blob/main/FungibleToken.ts",
   });
+  await token.initialize(adminAddress, UInt8.from(6), Bool(false));
 });
 await deployTx.prove();
 const pendingTx = await deployTx.sign([tokenPrivateKey, adminPrivateKey, deployerPrivateKey]).send();
