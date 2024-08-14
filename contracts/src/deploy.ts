@@ -19,7 +19,7 @@ const {privateKey: tokenPrivateKey, publicKey: tokenAddress} =
 const tokenAdmin = new FungibleTokenAdmin(adminAddress)
 const token = new FungibleToken(tokenAddress);
 
-const fee = 200_000_000;
+const fee = 100_000_000;
 
 console.log(deployerAddress.toJSON())
 
@@ -29,7 +29,7 @@ const deployTx = await Mina.transaction({
   sender: deployerAddress,
   fee,
 }, async () => {
-  AccountUpdate.fundNewAccount(deployerAddress);
+  AccountUpdate.fundNewAccount(deployerAddress, 3);
 
   await tokenAdmin.deploy({ adminPublicKey: deployerAddress })
   await token.deploy({
