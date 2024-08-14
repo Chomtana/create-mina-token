@@ -1,3 +1,4 @@
-import { Add } from './Add.js';
+import { ExampleToken } from './ExampleToken.js';
+import { MinaToken } from './MinaToken.js';
 
-export { Add };
+export { ExampleToken, MinaToken };

@@ -1,4 +1,14 @@
 {
   "version": 1,
-  "deployAliases": {}
+  "deployAliases": {
+    "create-mina-token": {
+      "networkId": "testnet",
+      "url": "https://api.minascan.io/node/devnet/v1/graphql",
+      "keyPath": "keys/create-mina-token.json",
+      "feepayerKeyPath": "C:\\Users\\NEXT/.cache/zkapp-cli/keys/deploy-mina-token.json",
+      "feepayerAlias": "deploy-mina-token",
+      "fee": "0.1",
+      "smartContract": "MinaToken"
+    }
+  }
 }
